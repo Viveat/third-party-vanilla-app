@@ -1,5 +1,5 @@
-## +Watt Application
-Applicazione di terze parti Viveat, realizzata per +Watt.
+## Third Party Vanilla Application
+Applicazione vanilla, per terze parti Viveat.
 
 ## How to run
   npm start
