@@ -1,0 +1,13 @@
+<template name="basicLayout">
+  {{> sidebar}}
+  <div id="main" class="pusher">
+    {{> header}}
+    <div class="main-wrapper">
+      {{> yield}}
+    </div>
+    <!-- <footer>
+        {{> footer}}
+    </footer> -->
+  </div>
+  <script type="text/javascript" src="http://localhost:8888/Viveat/viveat-widgets.js"></script>
+</template>

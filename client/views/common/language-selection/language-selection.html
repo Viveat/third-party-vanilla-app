@@ -1,0 +1,13 @@
+<template name="languageSelection">
+  <div class="language-selection">
+    {{#each flags}}
+      {{> singleFlag flag=this}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="singleFlag">
+  {{#if notSelected}}
+  <div class="language-flag {{flag.flag}}" id="flag-btn"></div>
+  {{/if}}
+</template>

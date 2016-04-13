@@ -1,0 +1,30 @@
+<template name="header">
+  <div class="ui large top fixed inverted menu navbar">
+    <div class="ui container">
+      <!-- Computer Navbar Items -->
+      <div class="item desktop-only">
+        <img class="ui tiny image " src="{{constant 'SMALL_LOGO'}}">
+      </div>
+      {{> menuItems itemsClass="desktop-only"}}
+      <div class="right menu desktop-only">
+        <div class="item">
+          {{> viveatWidgetLogin widgetId="login-widget-desktop"}}
+        </div>
+        <div class="item">
+          {{> languageSelection}}
+        </div>
+      </div>
+
+      <!-- Mobile Navbar Items -->
+      <a class="item mobile-only" id="sidebar-toggle">
+        <i class="sidebar large icon"></i>
+      </a>
+      <a class="right item mobile-only" href="/">
+        <img class="ui tiny image mobile-only" src="{{constant 'SMALL_LOGO'}}">
+      </a>
+      <div class="right item mobile-only user-login">
+          {{> viveatWidgetLogin widgetId="login-widget-mobile"}}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,16 @@
+<template name="sidebar">
+  <!-- Sidebar Menu -->
+  <div class="ui vertical inverted sidebar menu main-sidebar">
+    <div class="item first-item">
+      <div class="action">
+        <div class="left-side">
+          {{> languageSelection}}
+        </div>
+        <div class="right-side">
+          <i class="close large icon"></i>
+        </div>
+      </div>
+    </div>
+    {{> menuItems}}
+  </div>
+</template>

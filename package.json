@@ -1,0 +1,12 @@
+{
+  "name": "watt-app",
+  "version": "1.0.0",
+  "description": "+Watt Application",
+  "private": true,
+  "scripts": {
+    "start": "MONGO_URL=mongodb://localhost:27017/watt-app NODE_OPTIONS='--debug' meteor --settings settings-development.json --port 3100",
+    "dev": "MONGO_URL=mongodb://localhost:27017/watt-app NODE_OPTIONS='--debug' meteor --settings settings-development.json --port 3100",
+    "staging": "MONGO_URL=mongodb://localhost:27017/watt-app meteor --settings settings-staging.json --port 3100",
+    "prod": "ROOT_URL=http://watt.viveat.com MONGO_URL=mongodb://localhost:27017/watt-app meteor --settings settings-production.json --port 3100 --production"
+  }
+}

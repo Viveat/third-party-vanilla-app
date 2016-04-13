@@ -1,0 +1,43 @@
+@import 'variables';
+@import 'lib/elements';
+.ui.menu.navbar {
+  background: @primaryColor;
+  height    : @navbarHeight;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+
+.ui.menu.navbar .item {
+  z-index: 2;
+  &:first-child {
+    border-left: none !important;
+  }
+  &.user-login {
+    margin-right: 18px;
+    padding-top : 13px;
+    width       : 55px;
+    z-index     : 1;
+  }
+}
+
+.ui.inverted.menu .item:before {
+  background: transparent;
+}
+.ui.menu.navbar .item.mobile-only,
+.ui.menu.navbar .right.item.mobile-only {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .ui.menu.navbar .item.desktop-only,
+  .ui.menu.navbar .right.menu.desktop-only,
+  .ui.menu.navbar .right.item.desktop-only {
+    display: none;
+  }
+  .ui.menu.navbar .item.mobile-only,
+  .ui.menu.navbar .right.item.mobile-only {
+    display: block;
+  }
+  .ui.inverted.menu a.item:hover {
+    background: none;
+  }
+}

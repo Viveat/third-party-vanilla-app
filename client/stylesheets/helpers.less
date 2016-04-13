@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'lib/elements';
+/* -------------------
+    Helper styles
+   ------------------- */
+.hidden {
+  display: none;
+}
+.padding-wrapper {
+  padding: 20px;
+}
+.margin-wrapper {
+  margin: 20px auto;
+}
+.aligned {
+  &.center {
+    text-align: center;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
+}
+.link {
+  &.unstyled {
+    color: inherit;
+  }
+  &.no-underline {
+    text-decoration: none;
+  }
+  &.no-hover-styles:hover {
+    color: inherit;
+  }
+}
+.form-box {
+  padding: 15px;
+}

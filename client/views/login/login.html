@@ -1,0 +1,17 @@
+<template name="login">
+  <div class="ui middle aligned center aligned grid container login-wrapper">
+    <div class="fourteen wide mobile eight wide computer column">
+      <div class="ui container">
+        <img src="{{constant 'BIG_LOGO'}}" class="ui small image centered align logo">
+      </div>
+      {{> atForm class="ui large form"}}
+    </div>
+  </div>
+</template>
+
+<template name="dateInput">
+  <div class="at-input inline field">
+    <label for="at-field-{{_id}}">{{displayName}}</label>
+    <input type="date" id="at-field-{{_id}}" name="at-field-{{_id}}" {{disabled}}>
+  </div>
+</template>

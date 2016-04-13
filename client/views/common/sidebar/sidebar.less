@@ -1,0 +1,35 @@
+@import '{}/client/stylesheets/variables';
+.main-sidebar {
+  background: @secondaryColor !important;
+  a.item {
+    font-size: 1.1em;
+  }
+  .item {
+    &:before {
+      background: none !important;
+    }
+    &.active {
+      border-left: 2px solid #fff;
+    }
+  }
+  .first-item {
+    background: @primaryColor !important;
+    height    : @navbarHeight !important;
+    .action {
+      position      : relative;
+      width         : 100%;
+      padding-top   : 4px;
+      padding-bottom: 8px;
+      overflow      : auto;
+      .left-side {
+        float: left;
+      }
+      .right-side {
+        float: right;
+      }
+    }
+    .profile-image {
+      margin: 15px 0 5px;
+    }
+  }
+}

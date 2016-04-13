@@ -1,0 +1,72 @@
+// General styles, e. g. for the body tag
+@import 'helpers';
+@import 'variables';
+@import 'lib/elements';
+/* -------------------
+    Main Content
+   ------------------- */
+body,
+#main {
+  margin     : 0;
+  padding    : 0;
+  overflow-x : hidden;
+  color      : @primaryFontColor;
+  background : @primaryBackgroudColor;
+  font-family: 'brandon-grotesque';
+}
+a {
+  color     : inherit;
+  transition: 0.3s color;
+  &:hover {
+    color: @primaryLinkHoverColor;
+  }
+}
+.icon {
+  &.orange {
+    color: @html5Orange;
+  }
+}
+.ui.container {
+  margin: 0 auto;
+}
+.site-wrapper {
+  margin   : 0 auto;
+  max-width: @largeDesktopWidth;
+}
+.main-wrapper {
+  margin: @navbarHeight auto;
+}
+.ui.dimmer {
+  &.light {
+    background-color: rgba(236, 236, 236, 0.73);
+    .text {
+      color: @lightGreyColor;
+    }
+  }
+}
+.ui.form {
+  .field {
+    label {
+      font-weight: lighter;
+      font-size: 1.1em;
+    }
+  }
+}
+/* -------------------
+    Footer
+   ------------------- */
+.padding-wrapper.footer {
+  .border-radius(0px);
+  a:hover {
+    color: @secondaryLinkHoverColor;
+  }
+}
+/* -------------------
+    Avatar
+   ------------------- */
+.av {
+  -webkit-filter: blur(0.4px);
+  &.border {
+    border       : 2px solid #fff;
+  }
+}
