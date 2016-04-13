@@ -9,7 +9,7 @@ Router.route('/', {
   action: function() {
     this.render();
     SEO.set({
-      title: Meteor.App.NAME + '- Home'
+      title: Meteor.App.NAME + ' - Home'
     });
   }
 });
