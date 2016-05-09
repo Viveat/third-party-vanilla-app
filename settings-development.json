@@ -2,7 +2,7 @@
   "public": {
     "DEFAULT_LANGUAGE": "en",
     "ROOT_URL": "http://localhost:3100/",
-    "APP_ID_VIVEAT": "app-id-viveat"
+    "VIVEAT_APP_ID": "app-id-viveat"
   },
 
   "private": {

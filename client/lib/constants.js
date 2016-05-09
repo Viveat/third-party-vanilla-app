@@ -7,7 +7,7 @@ if (Meteor.App) {
 Meteor.App = {
   NAME: 'Lorem Ipsum',
   DESCRIPTION: 'Lorem Ipsum Desc',
-  APP_ID: Meteor.settings.public.APP_ID_VIVEAT,
+  VIVEAT_APP_ID: Meteor.settings.public.VIVEAT_APP_ID,
   SMALL_LOGO: "/images/logos/loremipsum-logo.png",
   BIG_LOGO: "/images/logos/loremipsum-logo.png",
   SIGNIN: false
