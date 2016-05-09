@@ -1,0 +1,85 @@
+<template name="orionSemanticLayout">
+  <div class="ui orion admin">
+    <aside class="ui orion side">
+      {{# if dictionaryReady }}
+        {{> reactiveTemplate template="adminSidebar" }}
+      {{/ if }}
+    </aside>
+    <div class="ui orion main">
+      {{> orionSemanticHeader }}
+      <div class="ui stackable centered grid">
+        <div class="admin-content column">
+          {{# if dictionaryReady }}
+            {{> yield }}
+          {{/ if }}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="orionSemanticOutAdminLayout">
+  <div class="ui stackable centered padded grid">
+    <div class="fourteen wide tablet six wide computer column">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+
+<template name="orionSemanticHeader">
+  <nav class="ui inverted fixed top menu">
+    <div class="ui icon item menu-toggle">
+      <i class="sidebar icon"></i>
+    </div>
+    {{# with getAdminLink 'myAccount' }}
+      <div class="ui right dropdown item">
+        {{ title }}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{# each childs }}
+            <a class="item {{ RouterLayerIsActiveRoutePartial activeRouteRegex }}" href="{{ RouterLayerPathFor routeName }}">
+              {{ title }}
+            </a>
+          {{/each}}
+          <a class="logout item">
+            {{ i18n 'global.logout' }}
+          </a>
+        </div>
+      </div>
+    {{/ with }}
+  </nav>
+</template>
+
+<template name="orionSemanticSmallContentOffset">
+  <div class="ui centered grid">
+    <div class="left aligned sixteen wide column">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+
+<template name="orionSemanticMediumContentOffset">
+  <div class="ui centered grid">
+    <div class="left aligned sixteen wide column">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+
+<template name="orionSemanticContentContainer">
+  <div class="ui stacked segment">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionSemanticTitle">
+  <h1 class="ui dividing header">
+    {{> yield }}
+  </h1>
+</template>
+
+<template name="orionSemanticTabs">
+  {{# each items }}
+    <a class="ui small {{ class }} button">{{ title }}</a>
+  {{/ each }}
+</template>

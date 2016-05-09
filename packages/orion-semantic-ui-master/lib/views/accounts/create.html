@@ -1,0 +1,81 @@
+<template name="orionSemanticAccountsCreate">
+  {{# Layout template="orionSemanticSmallContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
+      {{ i18n 'accounts.create.title' }}
+    {{/ Layout }}
+
+    {{# Layout template="orionSemanticContentContainer" }}
+      {{# if invitationId }}
+        <div class="ui positive message">
+          <div class="header">
+            Invitation created successfully
+          </div>
+        </div>
+        <a class="ui button" href="{{ RouterLayerPathFor 'registerWithInvitation' _id=invitationId }}">
+          {{ urlFor 'registerWithInvitation' _id=invitationId }}
+        </a>
+        <a class="ui button" href="{{ RouterLayerPathFor 'accounts.index' }}">
+          {{ i18n 'global.back' }}
+        </a>
+        <button class="ui primary btn-invite-another button">
+          {{ i18n 'accounts.create.inviteOther' }}
+        </button>
+      {{ else }}
+        <form class="ui create form">
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="createMethod" class="hidden" value="invitation" checked>
+              <label>{{ i18n 'accounts.create.createInvitation' }}</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="createMethod" class="hidden" value="now">
+              <label>{{ i18n 'accounts.create.createUserNow' }}</label>
+            </div>
+          </div>
+
+          <div class="grouped fields">
+            <label for="roles">{{ i18n 'accounts.create.selectRoles' }}</label>
+            {{# each roles }}
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" class="hidden" role="{{ this }}">
+                  <label>{{ this }}</label>
+                </div>
+              </div>
+            {{/ each }}
+          </div>
+
+          <div class="field">
+            <label for="email">{{ i18n 'accounts.create.email' }}</label>
+            <input type="email" name="email" />
+          </div>
+
+          {{# unless createWithInvitation }}
+            <div class="field">
+              <label for="name">{{ i18n 'accounts.schema.profile.name' }}</label>
+              <input type="text" name="name" />
+            </div>
+            <div class="field">
+              <label for="password">{{ i18n 'accounts.schema.password.new' }}</label>
+              <input type="password" name="password" />
+            </div>
+            <div class="field">
+              <label for="confirm">{{ i18n 'accounts.schema.password.confirm' }}</label>
+              <input type="password" name="confirm" />
+            </div>
+          {{/ unless }}
+
+          <a class="ui button" href="{{ RouterLayerPathFor 'accounts.index' }}">
+            {{ i18n 'global.cancel' }}
+          </a>
+          <button class="ui primary button">
+            {{ i18n 'global.create' }}
+          </button>
+          
+        </form>
+      {{/ if }}
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

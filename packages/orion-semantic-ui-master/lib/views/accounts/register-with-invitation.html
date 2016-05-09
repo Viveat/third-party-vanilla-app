@@ -1,0 +1,44 @@
+<template name="orionSemanticRegisterWithInvitation">
+  {{# contentFor "title" }}
+    {{ i18n 'accounts.register.title' }}
+  {{/ contentFor }}
+  {{# if invitation }}
+    {{# if error }}
+      <div class="ui negative message">
+        <div class="header">
+          {{ error }}
+        </div>
+      </div>
+    {{ else }}
+      <div class="ui positive message">
+        <div class="header">
+          {{ invitation._id }}
+        </div>
+      </div>
+    {{/ if }}
+
+    <form class="ui form">
+      <div class="field">
+        <label>{{i18n 'accounts.register.fields.email'}}</label>
+        {{# if invitation.email }}
+          <input type="email" name="email" value="{{ invitation.email }}" disabled=true>
+        {{ else }}
+          <input type="email" name="email" placeholder="{{i18n 'accounts.register.fields.email'}}" />
+        {{/ if }}
+      </div>
+      <div class="field">
+        <label>{{i18n 'accounts.register.fields.name'}}</label>
+        <input type="text" name="name" placeholder="{{i18n 'accounts.register.fields.name'}}" />
+      </div>
+      <div class="field">
+        <label>{{i18n 'accounts.register.fields.password'}}</label>
+        <input type="password" name="password" placeholder="{{i18n 'accounts.register.fields.password'}}">
+      </div>
+      <div class="field">
+        <label>{{i18n 'accounts.register.fields.confirmPassword'}}</label>
+        <input type="password" name="password-confirm" placeholder="{{i18n 'accounts.register.fields.confirmPassword'}}">
+      </div>
+      <button class="ui big primary button">{{i18n 'accounts.register.registerButton'}}</button>
+    </form>
+  {{/ if }}
+</template>

@@ -1,0 +1,86 @@
+<template name="orionSemanticAccountsUpdate">
+  {{# Layout template="orionSemanticSmallContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
+      {{ i18n 'accounts.update.title' }}
+    {{/ Layout }}
+
+    <div class="ui stacked segment">
+      {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
+        {{> afQuickField name='emails' }}
+
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
+
+    <h2 class="ui header">{{ i18n 'accounts.update.sections.profile.title' }}</h2>
+
+    <div class="ui stacked segment">
+      {{# autoForm id="accountsUpdateProfileForm" schema=profileSchema type="method-update" doc=user meteormethod="orionAccountsUpdateProfile" }}
+        {{> afQuickFields name='profile' }}
+
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
+
+    <h2 class="ui header">{{ i18n 'accounts.update.sections.roles.title' }}</h2>
+
+    <div class="ui stacked segment">
+      <form class="ui roles form">
+        <div class="inline fields">
+          <label for="roles">{{ i18n 'accounts.update.sections.roles.selectRoles' }}</label>
+          {{# each roles }}
+            <div class="field">
+              <div class="ui checkbox">
+                {{# if hasRole this }}
+                  <input type="checkbox" class="hidden" role="{{ this }}" checked>
+                  <label>{{ this }}</label>
+                {{else}}
+                  <input type="checkbox" class="hidden" role="{{ this }}">
+                  <label>{{ this }}</label>
+                {{/if}}
+              </div>
+            </div>
+          {{/ each }}
+        </div>
+        <button class="ui primary btn-save button">{{ i18n 'global.save' }}</button>
+      </form>
+    </div>
+
+    <h2 class="ui header">{{ i18n 'accounts.update.sections.changePassword.title' }}</h2>
+
+    <div class="ui stacked segment">
+      {{# autoForm id="accountsUpdatePasswordForm" schema=passwordSchema type="method-update" doc=user meteormethod="orionAccountsUpdatePassword" }}
+        {{> afQuickField name='password' }}
+        {{> afQuickField name='confirm' }}
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
+
+    <h2 class="ui header">{{ i18n 'accounts.update.sections.deleteUser.title' }}</h2>
+
+    <div class="ui stacked segment">
+      <div class="ui negative icon message">
+        <i class="warning sign icon"></i>
+        <div class="content">
+          <div class="header">
+            {{ i18n 'accounts.update.sections.deleteUser.advice' }}
+          </div>
+        </div>
+      </div>
+      {{# if confirmDelete }}
+        <button id="btnConfirmDeleteUser" class="ui big red button" user="{{user._id}}">
+          {{ i18n 'global.confirm' }}
+        </button>
+      {{ else }}
+        <button id="btnDeleteUser" class="ui big red button">
+          {{ i18n 'accounts.update.sections.deleteUser.button' }}
+        </button>
+      {{/ if }}
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+  {{/ Layout }}
+</template>

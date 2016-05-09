@@ -1,0 +1,11 @@
+<template name="orionSemanticPagesIndex">
+  {{# Layout template="orionSemanticMediumContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
+      {{ i18n 'pages.index.title' }}
+      <a href="{{ RouterLayerPathFor 'pages.create' }}" class="ui circular tiny icon button"><i class="plus icon"></i></a>
+    {{/ Layout }}
+    {{# Layout template="orionSemanticContentContainer" }}
+      {{> tabular table=tabularTable class="ui striped index-table table" }}
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

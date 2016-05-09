@@ -43,3 +43,7 @@ service-configuration
 utilities:avatar
 standard-minifier-css
 standard-minifier-js
+orionjs:core
+dvz:orion-semantic-ui
+orionjs:file-attribute
+orionjs:froala

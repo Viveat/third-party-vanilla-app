@@ -1,0 +1,14 @@
+<template name="orionSemanticAccountsIndex">
+  {{# Layout template="orionSemanticSmallContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
+      {{ i18n 'accounts.index.title' }}
+      {{# if userHasPermission 'accounts.showCreate' }}
+        <a href="{{ RouterLayerPathFor 'accounts.create' }}" class="ui circular tiny icon button"><i class="plus icon"></i></a>
+      {{/ if }}
+    {{/ Layout }}
+
+    {{# Layout template="orionSemanticContentContainer" }}
+      {{> tabular table=table class="ui celled index-table table"}}
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

@@ -1,0 +1,42 @@
+.ui.orion.admin {
+
+  .dataTables_wrapper {
+    margin: 0;
+
+    .row:first-child, .row:last-child {
+      padding: 0;
+    }
+
+    .dataTables_paginate {
+      position: relative;
+      top: -1.1em;
+
+      .pagination {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .paginate_button {
+          display: inline-block;
+          margin: 0;
+          margin-left: 0.5em;
+        }
+      }
+    }
+  }
+
+  .index-table {
+    width: 100% !important;
+
+    tbody {
+
+      tr {
+        cursor: pointer;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}

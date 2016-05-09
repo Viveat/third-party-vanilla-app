@@ -1,0 +1,49 @@
+<template name="orionSemanticSidebar">
+    <nav class="ui inverted inline vertical menu">
+        <a class="ui brand header item" href="{{ options 'homePath' '/' }}">
+            <i class="user icon"></i>
+
+            <div class="content">
+                {{ options 'siteName' 'Admin' }}
+            </div>
+        </a>
+        {{# each adminLinks }}
+            {{> orionSemanticSidebarLink }}
+        {{/ each }}
+    </nav>
+</template>
+
+<template name="orionSemanticSidebarLink">
+    {{# if childs }}
+        {{# if routeName }}
+            <div class="ui accordion item">
+                <a class="title" href="{{ RouterLayerPathFor routeName }}">
+                    {{ title }}
+                    <i class="dropdown icon"></i>
+                </a>
+                <div class="content" id="admin-links-{{ identifier }}">
+                    {{# each childs }}
+                        {{> orionSemanticSidebarLink }}
+                    {{/ each }}
+                </div>
+            </div>
+        {{ else }}
+            <div class="ui accordion item">
+                <a class="title" href="#">
+                    {{ title }}
+                    <i class="dropdown icon"></i>
+                </a>
+                <div class="content" id="admin-links-{{ identifier }}">
+                    {{# each childs }}
+                        {{> orionSemanticSidebarLink }}
+                    {{/ each }}
+                </div>
+            </div>
+        {{/ if }}
+    {{ else }}
+        <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item"
+           href="{{ RouterLayerPathFor routeName }}">
+            {{ title }}
+        </a>
+    {{/ if }}
+</template>

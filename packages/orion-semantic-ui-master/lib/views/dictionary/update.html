@@ -1,0 +1,16 @@
+<template name="orionSemanticDictionaryUpdate">
+  {{# Layout template="orionSemanticSmallContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
+      {{ i18n 'dictionary.update.title' }}
+    {{/ Layout }}
+    {{> reactiveTemplate template="tabs" data=getDataForTabs }}
+    <div class="ui stacked segment">
+      {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+        {{# if currentCategory }}
+          {{> afQuickFields name=currentCategory }}
+        {{/ if }}
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
+  {{/ Layout }}
+</template>

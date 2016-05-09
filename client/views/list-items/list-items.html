@@ -12,10 +12,10 @@
 <template name="singleItem">
   <div class="item">
     <div class="image">
-      <img src="http://www.watt.it/{{images.[0].attachment_url}}">
+      <img src="{{image}}">
     </div>
     <div class="content">
-      <a class="header" href="/item/{{id}}">{{name}}</a>
+      <a class="header" href="/item/{{_id}}">{{name}}</a>
       <div class="meta">
         <span class="price">{{price}}€</span>
       </div>

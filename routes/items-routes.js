@@ -28,7 +28,7 @@ Router.route('/item/:id', {
   },
   action: function() {
     this.render();
-    var itemId = parseInt(this.params.id),
+    var itemId = this.params.id,
       item = Items.findOne(itemId);
 
     SEO.set({
@@ -37,7 +37,7 @@ Router.route('/item/:id', {
   },
   data: function() {
     return {
-      itemId: parseInt(this.params.id)
+      itemId: this.params.id
     }
   }
 });

@@ -1,10 +1,12 @@
 <template name="item">
   <div class="ui text container center aligned">
     <h3>{{item.name}}</h3>
-    <img class="ui image centered align" src="http://www.watt.it/{{item.images.[0].attachment_url}}" />
+    <img class="ui image centered align" src="{{item.image}}" />
     {{{item.description}}}
   </div>
+  {{#if item.viveatItemId}}
   <div class="action-bar-widget">
-    {{> viveatWidgetActionBar itemId="xt2gasQZbTcNWqufB" widgetId="action-bar-item"}}
+    {{> viveatWidgetActionBar itemId=item.viveatItemId widgetId="action-bar-item"}}
   </div>
+  {{/if}}
 </template>
