@@ -81,6 +81,7 @@ meteor-base@1.0.3
 meteor-platform@1.2.5
 meteorhacks:inject-initial@1.0.4
 meteorspark:util@0.2.0
+mikowals:batch-insert@1.1.13
 minifier-css@1.1.10
 minifier-js@1.1.10
 minimongo@1.0.13
