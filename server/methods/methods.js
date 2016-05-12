@@ -20,5 +20,26 @@ Meteor.methods({
       }
     });
     return true;
+  },
+  "performItemsImport": function performItemsImport(itemsJson) {
+    var items = _
+      .chain(JSON.parse(itemsJson))
+      .map(function(itemObj) {
+        var item = _.omit(itemObj, 'id');
+        item['viveatId'] = itemObj.id;
+        return item;
+      })
+      .value();
+
+    var response;
+
+    Items.batchInsert(items, function(err, res) {
+      if (err) {
+        throw new Meteor.Error('Error inserting the documents');
+      }
+      response = res;
+    });
+
+    return response;
   }
 });
