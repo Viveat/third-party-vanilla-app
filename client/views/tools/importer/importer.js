@@ -22,7 +22,18 @@ Template.importer.events({
     var file = $(evt.currentTarget).find('input[type=file]')[0].files[0],
         fileReader;
 
-    if (!file || !window.FileReader) {
+    if (!file) {
+      FlashMessages.sendError("Si è verificato un errore nell'import.");
+      return;
+    }
+
+    if (!/\.json$/.test(file.name)) {
+      FlashMessages.sendError("Formato del file non supportato.");
+      return;
+    }
+
+    if (!window.FileReader) {
+      FlashMessages.sendError("Funzionalità non disponibile nel browser utilizzato.");
       return;
     }
 
@@ -31,6 +42,7 @@ Template.importer.events({
 
     fileReader.onerror = function(error) {
       console.log(error);
+      FlashMessages.sendError("Si è verificato un errore nell'import.");
       return;
     }
 
@@ -39,6 +51,8 @@ Template.importer.events({
         if (err) {
           // handle error
           console.log(err)
+        } else {
+          FlashMessages.sendSuccess("Import effettuato con successo.");
         }
       });
     }
